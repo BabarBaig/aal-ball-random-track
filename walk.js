@@ -39,8 +39,8 @@ function create(color, dx, dy) {
   // TODO: Set newBall properties: dx, dy, width, height
   newBall.dx = dx;
   newBall.dy = dy;
-  newBall.width = dx;
-  newBall.height = dy;
+  newBall.width = 20
+  newBall.height = 20
 
   // TODO: set the newBall.element property and initialize it to a Html element "div"
   newBall.element = document.createElement('div');
@@ -69,9 +69,12 @@ function update(ball, x, y) {
   // TODO: use the moveTo() function to move the ball
   // TODO: use the Javascript setTimeout() method to call changeDirectionIfNecessary() and update()
   //       every 16ms
-  // moveTo(ball, x, y)
+  moveTo(ball, x, y)
+  x += ball.dx
+  y += ball.dy
+  setTimeout(changeDirectionIfNecessary, 16, ball, x, y)
   // changeDirectionIfNecessary(ball, x, y)
-  // setTimeout(update, 16)
+  setTimeout(update, 16, ball, x, y)
 }
 
 // Uncomment these lines for step 1 of the activity
@@ -85,14 +88,14 @@ moveTo(ball1, 1, 1);
 moveTo(ball2, 10, 10);
 moveTo(ball3, 20, 20);
 
-var elm = document.getElementsByClassName("ball");
-console.log(elm.length)
+// var elm = document.getElementsByClassName("ball");
+// console.log(elm.length)
 
 // Uncomment these lines for step 2 of the activity
 // This is expected to make the 3 balls move around the area div
-// update(ball1, 70, 0);
-// update(ball2, 20, 200);
-// update(ball3, 300, 330);
+update(ball1, 70, 0);
+update(ball2, 20, 200);
+update(ball3, 300, 330);
 
 // Do not change code past this point
 if (typeof module !== 'undefined') {

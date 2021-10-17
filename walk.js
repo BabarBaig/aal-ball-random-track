@@ -64,7 +64,6 @@ function create(color, dx, dy) {
   return newBall;
 }
 
-// TODO: implement the update function
 function update(ball, x, y) {
   // TODO: use the moveTo() function to move the ball
   // TODO: use the Javascript setTimeout() method to call changeDirectionIfNecessary() and update()
@@ -73,13 +72,11 @@ function update(ball, x, y) {
   x += ball.dx
   y += ball.dy
   setTimeout(changeDirectionIfNecessary, 16, ball, x, y)
-  // changeDirectionIfNecessary(ball, x, y)
   setTimeout(update, 16, ball, x, y)
 }
 
 // Uncomment these lines for step 1 of the activity
 // This is expected to create 3 balls within the area div
-
 initialize();
 const ball1 = create('blue', 4, 3);
 const ball2 = create('red', 1, 5);
@@ -88,8 +85,9 @@ moveTo(ball1, 1, 1);
 moveTo(ball2, 10, 10);
 moveTo(ball3, 20, 20);
 
+// Useful diagnostic check to see if balls were created successfully
 // var elm = document.getElementsByClassName("ball");
-// console.log(elm.length)
+// console.log(elm.length)    // 3 balls created
 
 // Uncomment these lines for step 2 of the activity
 // This is expected to make the 3 balls move around the area div
